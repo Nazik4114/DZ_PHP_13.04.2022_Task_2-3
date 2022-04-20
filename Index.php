@@ -4,7 +4,6 @@ define('API_URL','https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid
 
 $json_dec=json_decode(file_get_contents(API_URL),true);
 
-
 ?>
 
 
@@ -46,11 +45,13 @@ $json_dec=json_decode(file_get_contents(API_URL),true);
                 </div>
             </div>
         </div>
+
 <ul>
     <?php foreach($json_dec as $item):?>
     <li> <?= $item['ccy'].'/'.$item['base_ccy'].'&nbsp;|&nbsp;'.$item['buy'].'|'.$item['sale']?></li>
  <?php endforeach ?>
 </ul>
+
         <!-- JS includes -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>

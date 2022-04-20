@@ -14,7 +14,7 @@
 
     if (isset($_GET["name"])) {
         $greet = "Hello ";
-        $greet_str += $_GET["name"];
+        $greet_str = $_GET["name"];
     }
     ?>
     <h1><?=$greet." ".$greet_str ?></h1>
