@@ -1,4 +1,5 @@
-
+<?php echo ini_get('error_reporting') ?>
+<?php error_reporting(E_ALL); ?>
 <?php
 define('API_URL','https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
 
@@ -22,9 +23,24 @@ $json_dec=json_decode(file_get_contents(API_URL),true);
         <div class="container">
             <h1 class="mb-3">Change bg.</h1>
             <div class="row"> <?php
+             if(isset($_GET['r'])){
                 $r=$_GET['r'];
+            }
+                else{
+                $r=255;
+            }
+                if(isset($_GET['g'])){
                 $g=$_GET['g'];
+            }
+            else{
+                $g=255;
+            }
+            if(isset($_GET['b'])){
                 $b=$_GET['b']; 
+            }
+            else{
+                $b=255;
+            }
                 ?>   
                 <div class="col-3 rounded p-2" style="background-color: rgb(<?= $r ?>,<?= $g ?>,<?= $b ?>)">
                     <form method="" action="" enctype="application/x-www-form-urlencoded">

@@ -1,3 +1,4 @@
+<?php error_reporting(E_ALL | E_STRICT);?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +14,10 @@
     $greet_str = "Hello world";
 
     if (isset($_GET["name"])) {
-        $greet = "Hello ";
-        $greet_str = $_GET["name"];
+        $greet_str = "Hello ".$_GET["name"];
     }
     ?>
-    <h1><?=$greet." ".$greet_str ?></h1>
+    <h1><?=error_reporting(E_ALL | E_STRICT);$greet_str ?></h1>
 </body>
 
 </html>
