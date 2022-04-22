@@ -17,7 +17,7 @@
         $greet_str = "Hello ".$_GET["name"];
     }
     ?>
-    <h1><?=error_reporting(E_ALL | E_STRICT);$greet_str ?></h1>
+    <h1><?=$greet_str ?></h1>
 </body>
 
 </html>
